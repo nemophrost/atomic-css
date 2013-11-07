@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atomic CSS</title>
+	<meta name = "viewport" content = "initial-scale = 1.0, user-scalable = no">
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+	<link rel="stylesheet/less" type="text/css" href="../atomic.less" />
+
+	<script type="text/javascript">
+		less = {
+			env: 'development'
+		};
+	</script>
+
+	<script src="js/less.min.js" type="text/javascript"></script>
+	<script src="js/zepto.min.js" type="text/javascript"></script>
+
+	<script>
+		$(function() {
+			$('body').children().each(function() {
+				var classes = this.className.split(' ');
+				var item = $(this);
+				if (item.data('sample')) {
+					item.text(this.className).prepend('<div class="atomic-inner trbl" />');
+				}
+				item
+					.wrap('<div class="atomic-example" />')
+					.before($('<div class="atomic-example-header" />').text(this.className))
+					.wrap('<div class="atomic-example-content" />')
+			});
+		});
+	</script>
+
+	<style>
+		body {
+			background: #eee;
+			text-align: left;
+			font-size: 14px;
+			font-family: Arial;
+			padding: 5px;
+		}
+		.atomic-example {
+			float: left;
+			position: relative;
+			vertical-align: top;
+			width: 200px;
+			height: 200px;
+			box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+			overflow: hidden;
+			margin: 5px;
+		}
+
+		.atomic-example-header {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 28px;
+			padding: 4px;
+			background: #ccc;
+			border-bottom: #999 solid 1px;
+		}
+
+		.atomic-example-content {
+			position: absolute;
+			top: 28px;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+
+		.atomic-example-hinter {
+			overflow: hidden;
+			background: rgba(246, 178, 107, 0.658824);
+		}
+
+		.atomic-inner {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			padding: inherit;
+			background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1)), 
+			linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1));
+			background-size:8px 8px;
+			background-position:0 0, 4px 4px;
+			background-clip: content-box;
+		}
+
+		.atomic-example-content > div {
+			position: relative;
+			box-shadow: inset 0 0 1px 0 black;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<button class="btn btn-primary fz-xs">Test Button 1</button>
+	<button class="btn btn-primary m-1 fz-sm">Test Button 2</button>
+	<button class="btn btn-primary m-a d-b">Test Button 3</button>
+	<button class="btn btn-primary ml-1 fz-lg">Test Button 4</button>
+	<button class="btn btn-primary fz-xl">Test Button 5</button>
+
+	<div class="m-a mt-1 p-3 w-50" data-sample="1"></div>
+	<div class="m-1 p-2" data-sample="1"></div>
+	<div class="m-2 p-1" data-sample="1"></div>
+	<div class="m-3" data-sample="1"></div>
+	<div class="fl" data-sample="1"></div>
+	<div class="fl-st p-1" data-sample="1"></div>
+	<div class="fl-nd p-1" data-sample="1"></div>
+	<div class="trbl p-2" data-sample="1"></div>
+	<div class="bgc-pr c-w p-2" data-sample="1"></div>
+	<div class="bgc-prlt" data-sample="1"></div>
+	<div class="fz-sm tt-u fw-lr td-u" data-sample="1"></div>
+	<div class="fz-xl fw-br tt-c" data-sample="1"></div>
+	<div class="tt-u fz-lg ml-2 p-1" data-sample="1"></div>
+</body>
+</html>
