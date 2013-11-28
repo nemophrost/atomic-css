@@ -1,0 +1,56 @@
+._marginSet(@suffix, @margin) {
+	.m-@{suffix} { margin: @margin; }
+	.mt-@{suffix} { margin-top: @margin; }
+	.mr-@{suffix} { margin-right: @margin; }
+	.mb-@{suffix} { margin-bottom: @margin; }
+	.ml-@{suffix} { margin-left: @margin; }
+	.mtb-@{suffix} {
+		margin-left: @margin;
+		margin-bottom: @margin;
+	}
+	.mlr-@{suffix} {
+		margin-left: @margin;
+		margin-right: @margin;
+	}
+}
+
+.marginSet(@n) {
+	._marginSet(@n, @n*@spacing-base-unit);
+}
+
+.fractionalMarginSet(@numerator, @denominator) {
+	._marginSet(~"@{numerator}-@{denominator}", floor(@numerator*@spacing-base-unit/@denominator));
+}
+
+._paddingSet(@suffix, @padding) {
+	.p-@{suffix} { padding: @padding; }
+	.pt-@{suffix} { padding-top: @padding; }
+	.pr-@{suffix} { padding-right: @padding; }
+	.pb-@{suffix} { padding-bottom: @padding; }
+	.pl-@{suffix} { padding-left: @padding; }
+	.ptb-@{suffix} {
+		padding-left: @padding;
+		padding-bottom: @padding;
+	}
+	.plr-@{suffix} {
+		padding-left: @padding;
+		padding-right: @padding;
+	}
+}
+
+.paddingSet(@n) {
+	._paddingSet(@n, @n*@spacing-base-unit);
+}
+
+.fractionalPaddingSet(@numerator, @denominator) {
+	._paddingSet(~"@{numerator}-@{denominator}", floor(@numerator*@spacing-base-unit/@denominator));
+}
+
+.sizeGenerator(@numerator, @denominator) {
+	.w-@{numerator}-@{denominator} {   width: percentage(floor(100000*@numerator/@denominator)/100000); }
+	.h-@{numerator}-@{denominator} {   height: percentage(floor(100000*@numerator/@denominator)/100000); }
+	.miw-@{numerator}-@{denominator} { min-width: percentage(floor(100000*@numerator/@denominator)/100000); }
+	.mih-@{numerator}-@{denominator} { min-height: percentage(floor(100000*@numerator/@denominator)/100000); }
+	.maw-@{numerator}-@{denominator} { max-width: percentage(floor(100000*@numerator/@denominator)/100000); }
+	.mah-@{numerator}-@{denominator} { max-height: percentage(floor(100000*@numerator/@denominator)/100000); }
+}
