@@ -1,20 +1,20 @@
 @import "mixins";
 
-@float-start: left;
-@float-end: right;
-@spacing-base-unit: 10px;
+@atomic-float-start: left;
+@atomic-float-end: right;
+@atomic-spacing-base-unit: 10px;
 
-@font-size-xs: 9px;
-@font-size-sm: 11px;
-@font-size-df: 14px;
-@font-size-lg: 22px;
-@font-size-xl: 36px;
+@atomic-font-size-xs: 9px;
+@atomic-font-size-sm: 11px;
+@atomic-font-size-df: 14px;
+@atomic-font-size-lg: 22px;
+@atomic-font-size-xl: 36px;
 
-@text-align-start: left;
-@text-align-end: right;
+@atomic-text-align-start: left;
+@atomic-text-align-end: right;
 
-@color-primary: #00beef;
-@color-accent: #ffaa00;
+@atomic-color-primary: #00beef;
+@atomic-color-accent: #ffaa00;
 
 // Position and block model
 .pos,
@@ -40,14 +40,14 @@
 .l-a { left: auto; }
 
 .fl,
-.fl-st { float: @float-start; }
-.fl-nd { float: @float-end; }
+.fl-st { float: @atomic-float-start; }
+.fl-nd { float: @atomic-float-end; }
 .fl-n {  float: none; }
 
 .cl,
 .cl-b {  clear: both; }
-.cl-st { clear: @float-start; }
-.cl-nd { clear: @float-end; }
+.cl-st { clear: @atomic-float-start; }
+.cl-nd { clear: @atomic-float-end; }
 
 .d,
 .d-b {  display: block; }
@@ -92,14 +92,14 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-.marginSet(0);
-.marginSet(1);
-.marginSet(2);
-.marginSet(3);
-.fractionalMarginSet(1,2);
-.fractionalMarginSet(1,3);
-.fractionalMarginSet(1,4);
-.fractionalMarginSet(2,3);
+.atomic-margin-set(0);
+.atomic-margin-set(1);
+.atomic-margin-set(2);
+.atomic-margin-set(3);
+.atomic-fractional-margin-set(1,2);
+.atomic-fractional-margin-set(1,3);
+.atomic-fractional-margin-set(1,4);
+.atomic-fractional-margin-set(2,3);
 
 .p-a {    padding: auto; }
 .pt-a {   padding-top: auto; }
@@ -108,22 +108,22 @@
 .pl-a {   padding-left: auto; }
 .ptb-a {  padding-top: auto;    padding-bottom: auto; }
 .plr-a {  padding-left: auto;   padding-right: auto; }
-.paddingSet(0);
-.paddingSet(1);
-.paddingSet(2);
-.paddingSet(3);
-.fractionalPaddingSet(1,2);
-.fractionalPaddingSet(1,3);
-.fractionalPaddingSet(1,4);
-.fractionalPaddingSet(2,3);
+.atomic-padding-set(0);
+.atomic-padding-set(1);
+.atomic-padding-set(2);
+.atomic-padding-set(3);
+.atomic-fractional-padding-set(1,2);
+.atomic-fractional-padding-set(1,3);
+.atomic-fractional-padding-set(1,4);
+.atomic-fractional-padding-set(2,3);
 
-.sizeGenerator(1,6);
-.sizeGenerator(1,4);
-.sizeGenerator(1,3);
-.sizeGenerator(1,2);
-.sizeGenerator(2,3);
-.sizeGenerator(5,6);
-.sizeGenerator(1,1);
+.atomic-size-generator(1,6);
+.atomic-size-generator(1,4);
+.atomic-size-generator(1,3);
+.atomic-size-generator(1,2);
+.atomic-size-generator(2,3);
+.atomic-size-generator(5,6);
+.atomic-size-generator(1,1);
 
 
 // Typography
@@ -144,11 +144,11 @@
 .fs,
 .fs-n {  font-style: normal; }
 .fs-i {  font-style: italic; }
-.fz-xs { font-size: @font-size-xs; }
-.fz-sm { font-size: @font-size-sm; }
-.fz-df { font-size: @font-size-df; }
-.fz-lg { font-size: @font-size-lg; }
-.fz-xl { font-size: @font-size-xl; }
+.fz-xs { font-size: @atomic-font-size-xs; }
+.fz-sm { font-size: @atomic-font-size-sm; }
+.fz-df { font-size: @atomic-font-size-df; }
+.fz-lg { font-size: @atomic-font-size-lg; }
+.fz-xl { font-size: @atomic-font-size-xl; }
 
 .va,
 .va-t {  vertical-align: top; }
@@ -157,8 +157,8 @@
 .va-b {  vertical-align: bottom; }
 
 .ta,
-.ta-st { text-align: @text-align-start; }
-.ta-nd { text-align: @text-align-end; }
+.ta-st { text-align: @atomic-text-align-start; }
+.ta-nd { text-align: @atomic-text-align-end; }
 .ta-c {  text-align: center; }
 .ta-j {  text-align: justify; }
 
@@ -185,17 +185,17 @@
 .bgc-w { background-color: white; }
 .bgc-b { background-color: black; }
 .bgc-t { background-color: transparent; }
-.bgc-pr { background-color: @color-primary; }
-.bgc-ac { background-color: @color-accent; }
-.bgc-prlt { background-color: mix(@color-primary, white, 25%); }
-.bgc-aclt { background-color: mix(@color-accent, white, 25%); }
+.bgc-pr { background-color: @atomic-color-primary; }
+.bgc-ac { background-color: @atomic-color-accent; }
+.bgc-prlt { background-color: mix(@atomic-color-primary, white, 25%); }
+.bgc-aclt { background-color: mix(@atomic-color-accent, white, 25%); }
 
 
 // Color
 .c-w { color: white; }
 .c-b { color: black; }
-.c-pr { color: @color-primary; }
-.c-ac { color: @color-accent; }
+.c-pr { color: @atomic-color-primary; }
+.c-ac { color: @atomic-color-accent; }
 
 .op-0 {  opacity: 0; }
 .op-2 {  opacity: 0.2; }

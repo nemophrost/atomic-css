@@ -1,4 +1,4 @@
-._marginSet(@suffix, @margin) {
+._atomic-margin-set(@suffix, @margin) {
 	.m-@{suffix} { margin: @margin; }
 	.mt-@{suffix} { margin-top: @margin; }
 	.mr-@{suffix} { margin-right: @margin; }
@@ -14,15 +14,15 @@
 	}
 }
 
-.marginSet(@n) {
-	._marginSet(@n, @n*@spacing-base-unit);
+.atomic-margin-set(@n) {
+	._atomic-margin-set(@n, @n*@atomic-spacing-base-unit);
 }
 
-.fractionalMarginSet(@numerator, @denominator) {
-	._marginSet(~"@{numerator}-@{denominator}", floor(@numerator*@spacing-base-unit/@denominator));
+.atomic-fractional-margin-set(@numerator, @denominator) {
+	._atomic-margin-set(~"@{numerator}-@{denominator}", floor(@numerator*@atomic-spacing-base-unit/@denominator));
 }
 
-._paddingSet(@suffix, @padding) {
+._atomic-padding-set(@suffix, @padding) {
 	.p-@{suffix} { padding: @padding; }
 	.pt-@{suffix} { padding-top: @padding; }
 	.pr-@{suffix} { padding-right: @padding; }
@@ -38,15 +38,15 @@
 	}
 }
 
-.paddingSet(@n) {
-	._paddingSet(@n, @n*@spacing-base-unit);
+.atomic-padding-set(@n) {
+	._atomic-padding-set(@n, @n*@atomic-spacing-base-unit);
 }
 
-.fractionalPaddingSet(@numerator, @denominator) {
-	._paddingSet(~"@{numerator}-@{denominator}", floor(@numerator*@spacing-base-unit/@denominator));
+.atomic-fractional-padding-set(@numerator, @denominator) {
+	._atomic-padding-set(~"@{numerator}-@{denominator}", floor(@numerator*@atomic-spacing-base-unit/@denominator));
 }
 
-.sizeGenerator(@numerator, @denominator) {
+.atomic-size-generator(@numerator, @denominator) {
 	.w-@{numerator}-@{denominator} {   width: percentage(floor(100000*@numerator/@denominator)/100000); }
 	.h-@{numerator}-@{denominator} {   height: percentage(floor(100000*@numerator/@denominator)/100000); }
 	.miw-@{numerator}-@{denominator} { min-width: percentage(floor(100000*@numerator/@denominator)/100000); }
